@@ -1,0 +1,72 @@
+<html >
+<body>
+
+<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<h3> Formulaire d'ajout d'un Compte courant</h3> 
+
+<br><br>
+
+<form class="form-horizontal">
+<div ng-app="formExample2">
+<div ng-controller="ExampleController2">
+
+  <ng-form novalidate class="simple-form2">
+  
+  <div class="form-group">
+  
+  <label class="col-sm-2 control-label">login_fk</label>
+  <input type="text" ng-model="user.login_fk" /><br /> <br>
+  
+  <label class="col-sm-2 control-label">id_compte</label>
+  <input type="text" ng-model="user.id_compte" /><br /> <br>
+  
+   <label class="col-sm-2 control-label">plafond</label>
+   <input type="text" ng-model="user.plafond" /><br /> <br>
+   
+    <label class="col-sm-2 control-label">montant</label>
+    <input type="text" ng-model="user.montant" /><br /> <br>
+    
+     <label class="col-sm-2 control-label">datecreation</label>
+     <input type="text" ng-model="user.datecreation" /><br /> <br> 
+    
+  <div class="col-sm-10">
+  
+  <label class="col-sm-2 control-label"></label>
+  <button class="btn btn-success" ng-click="saveCourant(user)">
+  <span class="glyphicon glyphicon-save"></span> Ajouter
+  </button>
+  
+   <input type="button" ng-click="asyncLoadCourant()" value="Load Courant" value="set background" />
+</ng-form></form><br><br><br><br>
+
+<h3>La liste des Comptes courant</h3><br>
+<br>
+<table class="table table-striped">
+<thead> 
+<tr>
+    <th>login_fk</th>
+    <th>id_compte</th>
+    <th>plafond</th>
+    <th>montant</th>
+    <th>datecreation</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="e in courant">
+    <td>{{ e.login_fk }}</td>
+    <td>{{ e.id_compte }}</td>
+    <td>{{ e.plafond }}</td>
+    <td>{{ e.montant }}</td>
+    <td>{{ e.datecreation }}</td>
+ </tr>
+</tbody>
+</table>   
+</div>
+</div>
+
+
+<script src="angular.min.js"></script>
+<script src="appcourant.js"></script>
+</body>
+</html>
